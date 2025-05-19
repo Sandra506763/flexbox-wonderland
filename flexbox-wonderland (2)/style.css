@@ -201,7 +201,6 @@ header::after {
 .card-grid {
   padding: 3rem 1rem 4rem;
   position: relative;
-
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
@@ -234,7 +233,7 @@ header::after {
   animation: gradientMove 5s ease-in-out infinite alternate;
   margin: 17px 5px 15px;
   display: flex;
-
+  align-items: flex-start;
   flex-direction: column;
   flex: 1 1 260px;
 }
@@ -311,6 +310,7 @@ header::after {
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  margin-top: auto;
 }
 .card-btn::after {
   content: "";
@@ -343,8 +343,6 @@ header::after {
   margin-bottom: -2px;
   z-index: 2;
   overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
 }
 .footer-wave {
   position: absolute;
@@ -352,20 +350,16 @@ header::after {
   height: 100%;
   bottom: 0;
   left: 0;
-  display: flex;
 }
 .wave-1 {
   z-index: 3;
   opacity: 0.7;
-  display: flex;
 }
 .wave-2 {
   z-index: 2;
   opacity: 0.5;
   animation: wave 12s linear infinite;
-  display: flex;
 }
-
 .wave-3 {
   z-index: 1;
   opacity: 0.3;
@@ -407,19 +401,14 @@ footer {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
 }
 .footer-content {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1.5rem;
 }
 .footer-divider {
   width: 80%;
@@ -436,10 +425,10 @@ footer {
 }
 .footer-sections {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  justify-content: center;
+  gap: 2.5rem;
   flex-wrap: wrap;
-
+  flex-direction: row;
   margin: 1rem 0;
   width: 100%;
   max-width: 900px;
@@ -448,7 +437,10 @@ footer {
   flex: 1;
   min-width: 150px;
   display: flex;
-  flex-wrap: wrap;
+  flex: 1 1 200px;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
 }
 .footer-heading {
   font-weight: 600;
@@ -456,15 +448,15 @@ footer {
   margin: 0;
 }
 .footer-links {
+  display: flex;
+  gap: 0.8rem;
+flex-direction: column;
 }
 .footer-link {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: all 0.2s ease;
   position: relative;
-  display: flex;
-
-  flex-direction: column;
   padding: 10px;
 }
 .footer-link::after {
@@ -486,10 +478,10 @@ footer {
 }
 .footer-icons {
   margin-top: 1rem;
-
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
   display: flex;
+  flex-wrap: wrap;
 }
 .footer-icon {
   width: 35px;
@@ -503,7 +495,7 @@ footer {
   user-select: none;
   position: relative;
   overflow: hidden;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
@@ -535,67 +527,80 @@ footer {
 }
 .copyright {
   margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 @media (max-width: 900px) {
   .card-row:nth-child(even) {
     margin-top: -1rem;
     margin-bottom: -1rem;
+    .footer-sections {
+      gap: 1.5rem;
+    }
+    .footer-waves-container {
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+    }
   }
-  .footer-waves-container {
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media (max-width: 600px) {
-  header {
-    font-size: 1.8rem;
-    padding: 1.5rem 0.5rem 2.5rem 0.5rem;
-  }
-  .hero {
-    padding: 3rem 0.5rem 2.5rem 0.5rem;
-  }
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 1.05rem;
-  }
-  .card-section {
-    padding: 1rem 0;
-  }
-  .card-grid {
-    padding: 1.5rem 0.5rem 2rem;
-  }
-  .card-row:nth-child(even) {
-    margin: 0;
-  }
-  .card {
-    max-width: 100%;
-    padding: 1.5rem 1.2rem;
-    border-radius: 1.5rem;
-    display: flex;
-    align-items: start;
-    max-width: 90%;
-  }
-  .footer-waves-container {
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  footer {
-    padding: 2.5rem 0.5rem 2rem 0.5rem;
-    font-size: 0.98rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 1 260px;
-  }
-  .footer-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+  @media (max-width: 600px) {
+    header {
+      font-size: 1.8rem;
+      padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+    }
+    .hero {
+      padding: 3rem 0.5rem 2.5rem 0.5rem;
+    }
+    .hero h2 {
+      font-size: 1.8rem;
+    }
+    .hero p {
+      font-size: 1.05rem;
+    }
+    .card-section {
+      padding: 1rem 0;
+    }
+    .card-grid {
+      padding: 1.5rem 0.5rem 2rem;
+      gap: 1.5 rem;
+      flex-direction: column;
+    }
+    .card-row {
+      gap: 1.5rem;
+      flex-direction: column;
+    }
+    .card-row:nth-child(even) {
+      margin: 0;
+    }
+    .card {
+      max-width: 100%;
+      padding: 1.5rem 1.2rem;
+      border-radius: 1.5rem;
+      display: flex;
+      align-items: start;
+      max-width: 90%;
+    }
+    .footer-waves-container {
+      height: 50px;
+      display: flex;
+    }
+    footer {
+      padding: 2.5rem 0.5rem 2rem 0.5rem;
+      font-size: 0.98rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 1 260px;
+    }
+    .footer-section {
+      width: 100%;
+
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
   }
 }
