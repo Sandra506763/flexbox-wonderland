@@ -23,7 +23,8 @@ body {
 }
 header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(
     90deg,
     var(--primary) 0%,
@@ -82,6 +83,7 @@ header::after {
 }
 .hero {
   align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   padding: 4rem 1rem 3rem 1rem;
@@ -160,7 +162,7 @@ header::after {
   padding: 2rem 0;
   z-index: 3;
   display: flex;
-  flex: 1;
+  flex-direction: column;
 }
 .card-section-bg {
   position: absolute;
@@ -202,14 +204,15 @@ header::after {
 
   display: flex;
   flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
 }
 .card-row {
   width: 100%;
   display: flex;
   justify-content: center;
-  text-decoration: center;
   flex-wrap: wrap;
-  gap: 0, 5rem;
+  gap: 2.5rem;
 }
 .card-row:nth-child(even) {
   margin-top: -1.5rem;
@@ -233,6 +236,7 @@ header::after {
   display: flex;
 
   flex-direction: column;
+  flex: 1 1 260px;
 }
 
 .card:nth-child(2) {
@@ -586,15 +590,12 @@ footer {
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 260px;
-    
   }
   .footer-section {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
-
+    flex-wrap: wrap;
   }
 }
